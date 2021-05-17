@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-3">
+    <div class="col-sm-12 bg-warning">
+        <h2 class="display-4 text-center">Seznam akcí</h2>
+    </div>
+</div>
+<div class="row">
+    <table class="table table-bordered">
+        <thead class="bg-primary text-white">
+            <tr><th>Název akce</th><th>Datum</th><th>Kategorie</th><th>Hodnocení</th></tr>
+        </thead>
+        <tbody>
+    {% for akce in seznam_akci %}
+        <tr><td><b>{{ akce.nazev }}</b></td><td>{{ akce.datum }}</td><td>{{ akce.kategorie }}</td><td>{{ akce.hodnoceni }}</td></tr>
+    {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
